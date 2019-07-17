@@ -2,6 +2,9 @@
 
 Visual object detection system: The task is to find a location of a phone dropped on the floor from a single RGB camera image. There is only one type of phone that is of interest.
 
+![image](https://user-images.githubusercontent.com/7854993/61386471-3a05c580-a869-11e9-8115-73c9fb4e7064.png)
+
+
 Consider a normalized XY-coordinate system for an image. Left-top corner of the image is defined as (x, y) = (0, 0), left-bottom as (x, y) = (0, 1), right-top as (x, y) = (1, 0), and finally right-bottom corner as (x, y) = (1, 1). The “phone detector” has to find normalized coordinates of the center of the phone. In the example above, the coordinates of the phone are approximately (x, y) = (0.26, 0.80). Every image contains a phone.
 
 A small labeled dataset can be found in find_phone_data folder. A dataset consists of approximately 100 jpeg images of the floor from the factory building with a phone on it. There is
@@ -15,7 +18,7 @@ Here is an example of the first 3 lines from labels.txt:
     95.jpg 0.2551 0.3129
     84.jpg 0.7122 0.7117
     
-The find_phone.py takes a single command line argument which is a path to the jpeg image to be tested. This script will print the normalized coordinates of the phone detected on the image in the format shown below. 
+The find_phone.py takes a single command line argument which is a path to the jpeg image. This script will print the normalized coordinates of the phone detected on the image in the format shown below. 
 
 Here is what a terminal command will look like. 
 
@@ -28,4 +31,6 @@ Here is what a terminal command will look like.
 ### Evaluation Criteria: 
     A phone is considered to be detected correctly on an image if the output is within a radius of 0.05 (normalized distance) centered on the phone
 
+### Install requirements.txt
+      > python3 -m pip install -r requirements.txt
 
